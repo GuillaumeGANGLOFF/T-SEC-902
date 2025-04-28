@@ -224,7 +224,7 @@ resource "azurerm_linux_virtual_machine" "vm-site-web-001" {
 
   admin_ssh_key {
     username   = "adminuser"
-    public_key = file("./terraform_azure_key_ssh/sec_azure_key.pub")
+    public_key = var.ssh_private_key
   }
 
   network_interface_ids = [azurerm_network_interface.nic-site-web-001.id]
@@ -263,7 +263,7 @@ resource "azurerm_linux_virtual_machine" "vm-ftp-001" {
 
   admin_ssh_key {
     username   = "adminuser"
-    public_key = file("./terraform_azure_key_ssh/sec_azure_key.pub")
+    public_key = var.ssh_private_key
   }
 
   network_interface_ids = [
@@ -305,7 +305,7 @@ resource "azurerm_linux_virtual_machine" "vm-surveillance-001" {
 
   admin_ssh_key {
     username   = "adminuser"
-    public_key = file("./terraform_azure_key_ssh/sec_azure_key.pub")
+    public_key = var.ssh_private_key
   }
 
   network_interface_ids = [azurerm_network_interface.nic-surveillance-001.id]
@@ -345,7 +345,7 @@ resource "azurerm_linux_virtual_machine" "vm-samba-001" {
 
   admin_ssh_key {
     username   = "adminuser"
-    public_key = file("./terraform_azure_key_ssh/sec_azure_key.pub")
+    public_key = var.ssh_private_key
   }
 
   network_interface_ids = [azurerm_network_interface.nic-samba-001.id]
@@ -385,7 +385,7 @@ resource "azurerm_linux_virtual_machine" "vm-backup-001" {
 
   admin_ssh_key {
     username   = "adminuser"
-    public_key = file("./terraform_azure_key_ssh/sec_azure_key.pub")
+    public_key = var.ssh_private_key
   }
 
   network_interface_ids = [azurerm_network_interface.nic-backup-001.id]
